@@ -1,0 +1,1 @@
+{"mappings":"ACAA,QAAQ,GAAA,CAAI,gB,4D","sources":["<anon>","src/scripts/script.js"],"sourcesContent":["console.log(\"hello console\");\n\n//# sourceMappingURL=index.3db90297.js.map\n","console.log('hello console');"],"names":["console","log"],"version":3,"file":"index.3db90297.js.map"}
