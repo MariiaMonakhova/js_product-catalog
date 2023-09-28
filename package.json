@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/MariiaMonakhova/js_product-catalog/issues"
   },
-  "homepage": "https://github.com/MariiaMonakhova/js_product-catalog#readme",
+  "homepage": "https://MariiaMonakhova.github.io/js_product-catalog",
   "devDependencies": {
     "eslint": "^8.50.0",
     "gh-pages": "^6.0.0",
