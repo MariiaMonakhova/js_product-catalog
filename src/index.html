@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body class="relative bg-orange-50 font-space">
+  <aside id="shopping-cart" class="absolute bg-gray-900 h-full w-96 right-0 top-0">
+    <div class="flex justify-between mx-9 py-5 mt-7 border-b border-white">
+      <h1 class="text-white text-2xl font-bold">Shopping Cart</h1>
+      <button type="close">
+        <img src="./images/close-line.svg" alt="close side-bar">
+      </button>
+    </div>
+
+    <div class="flex justify-between mx-9 py-5 mt-7 border-t border-white">
+      <p class="text-white text-base font-bold">Total</p>
+      <p class="text-white text-base font-bold">0 KR</p>
+    </div>
+    
+  </aside>
+
+  <header class="flex justify-between p-6 lg:py-14 lg:pr-28 lg:pl-16 border-b border-black">
+    <div class="flex">
+      <img class="h-6 w-6 lg:w-11 lg:h-11 mr-1 lg:mr-3" src="./images/Logomark.svg" alt="Logo">
+      <img class="h-12 w-28 lg:h-24 lg:w-48" src="./images/VooDoo Test.svg" alt="Logo">
+    </div>
+    <div class="flex">
+      <a href="#">
+        <img class="w-6 h-6 mt-3 lg:mt-2 mr-4 lg:mr-12" src="./images/shopping-cart.svg" alt="Logo">
+      </a>
+      <button class="bg-black text-white w-20 h-8 text-sm lg:w-24 lg:h-10 font-bold lg:text-lg rounded mt-3 lg:mt-0">Sign-up</button>
+    </div>
+  </header>
+  <div class="bg-black flex justify-between h-20 rounded mt-24 mx-6 lg:mx-28">
+    <div class="flex items-center p-6">
+      <img class="w-6 h-6 mr-2" src="./images/alert-circle.svg" alt="alert-circle">
+      <h4 class="text-white text-base mr-6 lg:mr-12">ALPHA</h4>
+      <p class="hidden lg:block text-white text-sm">Important info regarding our service</p>
+      <p class="block lg:hidden text-white text-sm">Important info</p>
+    </div>
+    
+    <button class="bg-black text-white px-4 py-2 rounded-md focus:outline-none pointer-events-auto">
+      <img src="./images/chevron-down.svg" alt="more info">
+    </button>
+    <div class="hidden bg-black text-white p-4 absolute top-0 left-0 right-0 transition-all duration-300 transform scale-y-0 opacity-0 origin-top">
+      <p>Info to hide</p>
+    </div>
+  </div>
+
+  <main class="mx-6 lg:mx-28 mt-12 h-40 bg-black">
+    <h1 class="text-white">Products</h1>
+  </main>
+
+  <footer class="flex flex-col lg:flex-row gap-12 lg:gap-0 py-20 px-28">
+    <div class="flex flex-col w-80 gap-y-5">
+      <a href="#faq" class="uppercase font-bold text-sm">Faq</a>
+      <a href="#returns" class="uppercase font-bold text-sm">Returns</a>
+      <a href="#contact" class="uppercase font-bold text-sm">Contact</a>
+    </div>
+
+    <div class="flex flex-col w-80 gap-y-5">
+      <a href="#terms" class="uppercase font-bold text-sm">Terms & Conditions</a>
+      <a href="#policy" class="uppercase font-bold text-sm">Privacy Policy</a>
+      <a href="#cookie" class="uppercase font-bold text-sm">Cookie Policy</a>
+      <a href="#settings" class="uppercase font-bold text-sm">Cookie Settings</a>
+    </div>
+
+    <div class="flex flex-col w-80 gap-y-5">
+      <a href="#about" class="uppercase font-bold text-sm">About second chance</a>
+      <a href="#carrer" class="uppercase font-bold text-sm">Career</a>
+      <a href="#facebook" class="uppercase font-bold text-sm">Facebook</a>
+      <a href="#instagram" class="uppercase font-bold text-sm">Instagram</a>
+    </div>
+
+    <img class="mt-5 lg:mt-0 order-last lg:order-first" src="./images/LogoFooter.svg" alt="footer logo">
+  </footer>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>
