@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx parcel src/index.html",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "start": "parcel serve src/index.html"
   },
   "repository": {
