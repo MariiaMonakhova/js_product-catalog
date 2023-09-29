@@ -182,22 +182,33 @@ fetchProducts(currPage).then(products => {
 function handleOpenCart() {
   const asideCart = document.querySelector('aside');
   asideCart.classList.remove('translate-x-full');
+  asideCart.classList.remove('w-0');
+  asideCart.classList.add('w-96');
 }
 
 function handleCloseCart() {
   const asideCart = document.querySelector('aside');
   asideCart.classList.add('translate-x-full');
+  asideCart.classList.add('w-0');
+  asideCart.classList.remove('w-96');
 }
 
 function handleOpenInfo() {
   const info = document.getElementById('info');
+  const openButton = document.getElementById('more-info');
+  openButton.classList.toggle('hidden');
+  const closeButton = document.getElementById('less-info');
+  closeButton.classList.toggle('hidden');
+  
   info.classList.toggle('hidden');
 }
 
 const closeCartButton = document.getElementById('close');
 const openCartButton = document.getElementById('cart');
 const openInfoButton = document.getElementById('more-info');
+const closeInfoButton = document.getElementById('less-info');
 
 openCartButton.addEventListener('click', handleOpenCart);
 closeCartButton.addEventListener('click', handleCloseCart);
 openInfoButton.addEventListener('click', handleOpenInfo);
+closeInfoButton.addEventListener('click', handleOpenInfo);

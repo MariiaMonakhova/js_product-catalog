@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Product Catalog</title>
 </head>
-<body class="relative bg-orange-50 font-space overflow-x-hidden">
-  <aside id="shopping-cart" class="absolute bg-gray-900 h-full w-96 right-0 top-0 z-20 transform translate-x-full transition-transform duration-300">
+<body class="relative bg-orange-50 font-space">
+  <aside id="shopping-cart" class="overflow-hidden absolute bg-gray-900 h-full w-0 right-0 top-0 z-20 transform translate-x-full transition-transform duration-300">
     <div class="flex justify-between mx-9 py-5 mt-7 border-b border-white mt">
       <h1 class="text-white text-2xl font-bold">Shopping Cart</h1>
       <button type="button" id="close">
@@ -22,7 +22,6 @@
       <p class="text-white text-base font-bold">Total</p>
       <p class="text-white text-base font-bold">0 KR</p>
     </div>
-    
   </aside>
 
   <header class="flex justify-between p-6 lg:py-14 lg:pr-28 lg:pl-16 border-b border-black">
@@ -48,30 +47,34 @@
     <button id="more-info" class="bg-black text-white px-4 py-2 rounded-md focus:outline-none pointer-events-auto">
       <img src="./images/chevron-down.svg" alt="more info">
     </button>
-
-    <div id="info" class="hidden bg-black text-white p-4">
-      <p class="text-white z-10">Info to hide</p>
+    <button id="less-info" class="hidden mt-3 text-bold w-12 h-12 px-4 py-2 rounded-md focus:outline-none pointer-events-auto">
+      <img src="./images/arrow-chevron-up.svg" alt="less info">
+    </button>
+  </div>
+  <div class="relative"> 
+    <div id="info" class="absolute hidden rounded right-6 lg:right-28 bg-black text-white p-4 w-max">
+      <p class="text-red-600 z-10">Info to hide</p>
     </div>
   </div>
-
+  
   <main id="products" class="grid gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 place-items-center mx-6 lg:mx-28 mt-12"></main>
   <div id="pagination" class="text-center flex justify-center mt-20"></div>
 
   <footer class="flex flex-col lg:flex-row mt-40 gap-12 lg:gap-0 py-20 px-28 border-t border-black bg-white">
-    <div class="flex flex-col w-80 gap-y-5">
+    <div class="flex flex-col w-max lg:w-80 gap-y-5">
       <a href="#faq" class="uppercase font-bold text-sm">Faq</a>
       <a href="#returns" class="uppercase font-bold text-sm">Returns</a>
       <a href="#contact" class="uppercase font-bold text-sm">Contact</a>
     </div>
 
-    <div class="flex flex-col w-80 gap-y-5">
+    <div class="flex flex-col w-max lg:w-80 gap-y-5">
       <a href="#terms" class="uppercase font-bold text-sm">Terms & Conditions</a>
       <a href="#policy" class="uppercase font-bold text-sm">Privacy Policy</a>
       <a href="#cookie" class="uppercase font-bold text-sm">Cookie Policy</a>
       <a href="#settings" class="uppercase font-bold text-sm">Cookie Settings</a>
     </div>
 
-    <div class="flex flex-col w-80 gap-y-5">
+    <div class="flex flex-col w-max lg:w-80 gap-y-5">
       <a href="#about" class="uppercase font-bold text-sm">About second chance</a>
       <a href="#carrer" class="uppercase font-bold text-sm">Career</a>
       <a href="#facebook" class="uppercase font-bold text-sm">Facebook</a>
