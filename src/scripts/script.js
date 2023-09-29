@@ -13,7 +13,7 @@ async function fetchProducts(page) {
 
 function createProduct(product) {
   const productCard = document.createElement('div');
-  productCard.classList.add('w-80', 'h-max', 'm-4', 'rounded', 'mt-12');
+  productCard.classList.add('w-72', 'h-max', 'm-4', 'rounded', 'mt-12');
 
   const productImage = document.createElement('img');
   productImage.classList.add(
