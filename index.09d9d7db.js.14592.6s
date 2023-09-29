@@ -125,19 +125,13 @@ function handleCloseCart() {
 }
 function handleOpenInfo() {
     const info = document.getElementById("info");
-    const openButton = document.getElementById("more-info");
-    openButton.classList.toggle("hidden");
-    const closeButton = document.getElementById("less-info");
-    closeButton.classList.toggle("hidden");
     info.classList.toggle("hidden");
 }
 const closeCartButton = document.getElementById("close");
 const openCartButton = document.getElementById("cart");
 const openInfoButton = document.getElementById("more-info");
-const closeInfoButton = document.getElementById("less-info");
 openCartButton.addEventListener("click", handleOpenCart);
 closeCartButton.addEventListener("click", handleCloseCart);
 openInfoButton.addEventListener("click", handleOpenInfo);
-closeInfoButton.addEventListener("click", handleOpenInfo);
 
 //# sourceMappingURL=index.09d9d7db.js.map
