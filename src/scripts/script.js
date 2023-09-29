@@ -17,13 +17,14 @@ function createProduct(product) {
 
   const productImage = document.createElement('img');
   productImage.classList.add(
-    'w-auto',
-    'h-auto',
+    'w-72',
+    'h-72',
     'border',
     'border-black',
     'rounded',
     'relative',
-    'mb-2'
+    'mb-2',
+    'object-cover',
   );
   productImage.setAttribute('alt', 'Product Image');
   if (product.images.length > 0) {
@@ -89,9 +90,9 @@ function getPageNumbers(pageCount, currentPage, visiblePages) {
       pages.push(i);
     }
   } else {
-    const halfVisiblePages = Math.ceil(visiblePages / 2);
+    const halfVisiblePages = Math.floor(visiblePages / 2);
 
-    if (currentPage <= halfVisiblePages) {
+    if (currentPage <= halfVisiblePages + 1) {
       for (let i = 1; i <= visiblePages - 1; i++) {
         pages.push(i);
       }
@@ -108,7 +109,7 @@ function getPageNumbers(pageCount, currentPage, visiblePages) {
     } else {
       pages.push(1);
       pages.push('...');
-      for (let i = currentPage - halfVisiblePages + 2; i <= currentPage + halfVisiblePages - 2; i++) {
+      for (let i = currentPage - halfVisiblePages + 1; i <= currentPage + halfVisiblePages - 1; i++) {
         pages.push(i);
       }
       pages.push('...');
