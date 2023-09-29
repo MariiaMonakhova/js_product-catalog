@@ -12,7 +12,7 @@ function createProduct(product) {
     const productCard = document.createElement("div");
     productCard.classList.add("w-80", "h-max", "m-4", "rounded", "mt-12");
     const productImage = document.createElement("img");
-    productImage.classList.add("w-auto", "h-max", "border", "border-black", "rounded", "relative", "mb-2");
+    productImage.classList.add("w-auto", "h-auto", "border", "border-black", "rounded", "relative", "mb-2");
     productImage.setAttribute("alt", "Product Image");
     if (product.images.length > 0) productImage.setAttribute("src", product.images[0].src);
     else productImage.setAttribute("src", "https://cdn.shopify.com/s/files/1/0690/0075/7529/products/5196c9302b12ec8d50d0e700e2865c2a.png?v=1694603298");
