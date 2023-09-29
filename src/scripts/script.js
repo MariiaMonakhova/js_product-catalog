@@ -18,7 +18,7 @@ function createProduct(product) {
   const productImage = document.createElement('img');
   productImage.classList.add(
     'w-auto',
-    'h-max',
+    'h-auto',
     'border',
     'border-black',
     'rounded',
