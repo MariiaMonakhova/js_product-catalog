@@ -89,7 +89,7 @@ function getPageNumbers(pageCount, currentPage, visiblePages) {
       pages.push(i);
     }
   } else {
-    const halfVisiblePages = Math.floor(visiblePages / 2);
+    const halfVisiblePages = Math.ceil(visiblePages / 2);
 
     if (currentPage <= halfVisiblePages) {
       for (let i = 1; i <= visiblePages - 1; i++) {
@@ -108,7 +108,7 @@ function getPageNumbers(pageCount, currentPage, visiblePages) {
     } else {
       pages.push(1);
       pages.push('...');
-      for (let i = currentPage - halfVisiblePages; i <= currentPage + halfVisiblePages; i++) {
+      for (let i = currentPage - halfVisiblePages + 2; i <= currentPage + halfVisiblePages - 2; i++) {
         pages.push(i);
       }
       pages.push('...');
