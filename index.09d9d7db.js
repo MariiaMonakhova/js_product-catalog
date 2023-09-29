@@ -6,12 +6,11 @@ async function fetchProducts(page) {
     const BASE_URL = `https://voodoo-sandbox.myshopify.com/products.json?limit=${productsPerPage}&page=${page}`;
     const response = await fetch(BASE_URL);
     const data = await response.json();
-    console.log(data.products[3]);
     return data.products;
 }
 function createProduct(product) {
     const productCard = document.createElement("div");
-    productCard.classList.add("w-60", "h-80", "m-4", "rounded", "mt-12");
+    productCard.classList.add("w-80", "h-max", "m-4", "rounded", "mt-12");
     const productImage = document.createElement("img");
     productImage.classList.add("w-auto", "h-max", "border", "border-black", "rounded", "relative", "mb-2");
     productImage.setAttribute("alt", "Product Image");
@@ -51,24 +50,67 @@ function createProduct(product) {
     const container = document.getElementById("products");
     container.appendChild(productCard);
 }
+function getPageNumbers(pageCount, currentPage, visiblePages) {
+    const pages = [];
+    if (pageCount <= visiblePages) for(let i = 1; i < pageCount; i++)pages.push(i);
+    else {
+        const halfVisiblePages = Math.floor(visiblePages / 2);
+        if (currentPage <= halfVisiblePages) {
+            for(let i = 1; i <= visiblePages - 1; i++)pages.push(i);
+            pages.push("...");
+            pages.push(pageCount);
+        } else if (currentPage >= pageCount - halfVisiblePages) {
+            pages.push(1);
+            pages.push("...");
+            for(let i = pageCount - visiblePages + 2; i <= pageCount; i++)pages.push(i);
+        } else {
+            pages.push(1);
+            pages.push("...");
+            for(let i = currentPage - halfVisiblePages; i <= currentPage + halfVisiblePages; i++)pages.push(i);
+            pages.push("...");
+            pages.push(pageCount);
+        }
+    }
+    return pages;
+}
 function renderPagination() {
     const paginationContainer = document.createElement("div");
-    paginationContainer.classList.add("flex", "gap-4", "mt-4");
+    paginationContainer.classList.add("flex", "gap-4", "content-center");
     const maxVisiblePages = 5;
-    for(let page = 1; page <= totalPages; page++){
+    const pageNumbers = getPageNumbers(totalPages, currPage, maxVisiblePages);
+    pageNumbers.forEach((page)=>{
         const pageButton = document.createElement("button");
         pageButton.textContent = page;
         pageButton.classList.add("w-10", "h-10", "rounded-full", "border", "border-black");
-    }
-    const container = document.getElementById("products");
+        if (currPage === page) pageButton.classList.add("bg-gray-900", "text-white");
+        else pageButton.classList.remove("bg-gray-900", "text-white");
+        if (page === "...") {
+            pageButton.disabled = true;
+            pageButton.classList.add("pointer-events-none");
+        } else pageButton.addEventListener("click", ()=>{
+            currPage = page;
+            fetchProducts(currPage).then((products)=>{
+                const container = document.getElementById("products");
+                container.innerHTML = "";
+                products.forEach((product)=>{
+                    createProduct(product);
+                });
+            });
+            renderPagination();
+        });
+        paginationContainer.appendChild(pageButton);
+    });
+    const container = document.getElementById("pagination");
+    container.innerHTML = "";
     container.appendChild(paginationContainer);
 }
 fetchProducts(currPage).then((products)=>{
     return products.forEach((product)=>{
         createProduct(product);
     });
+}).then(()=>{
+    renderPagination();
 });
-// renderPagination();
 function handleOpenCart() {
     const asideCart = document.querySelector("aside");
     asideCart.classList.remove("translate-x-full");
