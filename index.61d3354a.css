@@ -418,8 +418,8 @@ img, video {
   height: 2rem;
 }
 
-.h-auto {
-  height: auto;
+.h-80 {
+  height: 20rem;
 }
 
 .h-full {
@@ -428,6 +428,10 @@ img, video {
 
 .h-max {
   height: max-content;
+}
+
+.h-72 {
+  height: 18rem;
 }
 
 .w-10 {
@@ -571,6 +575,10 @@ img, video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.object-cover {
+  object-fit: cover;
 }
 
 .p-2 {

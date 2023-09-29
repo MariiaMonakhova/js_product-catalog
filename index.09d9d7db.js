@@ -12,7 +12,7 @@ function createProduct(product) {
     const productCard = document.createElement("div");
     productCard.classList.add("w-72", "h-max", "m-4", "rounded", "mt-12");
     const productImage = document.createElement("img");
-    productImage.classList.add("w-auto", "h-auto", "border", "border-black", "rounded", "relative", "mb-2");
+    productImage.classList.add("w-72", "h-72", "border", "border-black", "rounded", "relative", "mb-2", "object-cover");
     productImage.setAttribute("alt", "Product Image");
     if (product.images.length > 0) productImage.setAttribute("src", product.images[0].src);
     else productImage.setAttribute("src", "https://cdn.shopify.com/s/files/1/0690/0075/7529/products/5196c9302b12ec8d50d0e700e2865c2a.png?v=1694603298");
@@ -54,8 +54,8 @@ function getPageNumbers(pageCount, currentPage, visiblePages) {
     const pages = [];
     if (pageCount <= visiblePages) for(let i = 1; i < pageCount; i++)pages.push(i);
     else {
-        const halfVisiblePages = Math.ceil(visiblePages / 2);
-        if (currentPage <= halfVisiblePages) {
+        const halfVisiblePages = Math.floor(visiblePages / 2);
+        if (currentPage <= halfVisiblePages + 1) {
             for(let i = 1; i <= visiblePages - 1; i++)pages.push(i);
             pages.push("...");
             pages.push(pageCount);
@@ -66,7 +66,7 @@ function getPageNumbers(pageCount, currentPage, visiblePages) {
         } else {
             pages.push(1);
             pages.push("...");
-            for(let i = currentPage - halfVisiblePages + 2; i <= currentPage + halfVisiblePages - 2; i++)pages.push(i);
+            for(let i = currentPage - halfVisiblePages + 1; i <= currentPage + halfVisiblePages - 1; i++)pages.push(i);
             pages.push("...");
             pages.push(pageCount);
         }
